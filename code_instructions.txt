@@ -1,0 +1,31 @@
+docker run -it -e POSTGRES_USER="root" -e  POSTGRES_PASSWORD="root" 
+-e  POSTGRES_DB="ny_taxi" -v C:/absolutePath/data-engineering-zoomcamp/ny_taxis_postgres_data:/var/lib/postgresql/data -p 5433:5432 postgres:13
+
+
+
+
+##
+cli for post gres
+
+pip install pgcli
+
+# 1. pgcli --help
+# -h host, -p post I changed it, -u user, and -d is database
+
+pgcli -h localhost -p 5433 -u root -d ny_taxi
+
+######################################
+use wget to download data
+ wget https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2021-01.parquet
+
+cp ~/tmp/..
+less filename.csv # cmd utility to view text fie
+
+# take 100 row and copy them on another file called yellow_head
+head -n 100 yellow_tripdata_2021-01.parquet > yellow_head.csv
+
+# word count wc and use line -l
+wc -l yellow_tripdata_2021-01.parquet
+
+
+
